@@ -1,0 +1,12 @@
+<p id="notice"><%= notice %></p>
+
+<h1>All Todos</h1>
+<% @todos.each do |todo|  %>
+    <ul>
+        <span style="<%= 'text-decoration: line-through;' if todo.status %>"><%= todo.title %></span>
+        <%= link_to "view", todo_path(todo) %>
+        <%= link_to "delete", todo_path(todo), method: :delete, data: { confirm: "Are you sure?"} %>
+    </ul>
+<% end %>
+
+<%= link_to "Add todo", new_todo_path %>

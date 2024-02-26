@@ -1,0 +1,10 @@
+<h1>Edit <%= @todo.title %> </h1>
+
+<%= form_with(model: @todo, local: true) do |f| %>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+    <%= f.check_box :status %>
+
+    <%= f.submit "Update" %>
+<% end %>
+<%= link_to 'Back', todos_path %>
